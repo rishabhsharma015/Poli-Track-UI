@@ -1,0 +1,400 @@
+/* Registration CSS */
+
+
+.body{
+    min-height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    background-color: #bfdffe;
+    background-image: linear-gradient(62deg, #b8dbff 0%, #f1e3ff 100%);
+}
+
+.container{
+    width: 1000px;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 25px;  
+    padding: 5px 30px;
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+    box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    backdrop-filter: blur(10px);
+}
+
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 28px;
+    text-align: center;
+    height: 15%;
+}
+
+form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.details{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div1{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.details1{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.details2{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.options{
+    width: 290px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.options>label{
+    color: gray;
+}
+
+select{
+    border: none;
+    padding: 15px;
+    outline: none;
+}
+
+.gender{
+    padding: 15px;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    gap: 12px;
+    border-radius: 10px;
+}
+
+#gender-label{
+    color: rgb(53, 49, 49);
+}
+
+.person{
+    color: black;
+}
+
+.select-gender input{
+    margin-right: 20px;
+}
+
+.btn-grp{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+
+.inputBox{
+    position: relative;
+    width: 290px;
+}
+
+.inp-span{
+    position: relative;
+}
+
+.icon{
+    width: fit-content;
+    position: absolute;
+    right: 8%;
+    bottom: 21%;
+}
+
+.icon i{
+    font-size: 23px;
+    cursor: pointer;
+}
+
+#closeEye{
+    display: none;
+}
+
+#c_closeEye{
+    display: none;
+}
+
+.inputBox input{
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.inputBox span{
+    position: absolute;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 15px;
+    pointer-events: none;
+    color: gray;
+    transition: all ease 0.2s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+    color: black;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 12px;
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+button{
+    width: 20%;
+    padding: 15px 50px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all linear 0.2s;
+    z-index: 1111;
+    margin-top: 40px;
+}
+
+button::after{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all linear 0.2s;
+    z-index: -1;
+}
+
+button:hover::after{
+    transform: translate(-50%, -50%) scale(6.5);
+}
+
+button:hover{
+    color: black;
+}
+
+
+/* /////////////////// Responsiveness ///////////////////////////// */
+
+@media (max-width: 600px) {
+
+    .body {
+        height: 100%;
+        display: flex;
+        justify-content: flex-start; /* Changed to flex-start to avoid centering overlapping */
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+        background-color: #bfdffe;
+        background-image: linear-gradient(62deg, #b8dbff 0%, #f1e3ff 100%);
+    }
+
+    .nav {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        position: fixed; /* Fixed the navbar */
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.9); /* Added background color for readability */
+        z-index: 1000;
+    }
+
+    .container {
+        width: 100%;
+        /* margin-top: 60px; Add margin-top to avoid overlapping with fixed navbar */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 20px;
+        background: rgba(255, 255, 255, 0.09);
+        border-radius: 0px;
+        box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3px);
+    }
+
+    .icon {
+        width: fit-content;
+        position: absolute;
+        right: 8%;
+        bottom: 18%;
+    }
+
+    .icon i {
+        font-size: 23px;
+        cursor: pointer;
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        gap: 0px;
+        flex-direction: column;
+        overflow-y: scroll;
+        padding: 15px 0;
+        
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .details {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px 0;
+    }
+
+    .details1 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 90%;
+        height: fit-content;
+    }
+
+    .div1 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .details2 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 90%;
+        height: fit-content;
+    }
+
+    .options {
+        width: 100%;
+    }
+
+    .options > label {
+        color: gray;
+    }
+
+    select {
+        width: 50%;
+    }
+
+    .btn-grp {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .inputBox {
+        position: relative;
+        width: 100%;
+    }
+
+    .inputBox input {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 35%;
+        padding: 15px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        transition: all linear 0.2s;
+        z-index: 1111;
+        margin-top: 0;
+        /* margin-bottom: 20px; */
+    }
+}

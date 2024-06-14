@@ -1,0 +1,339 @@
+/* Forgot Password CSS */
+.body{
+    height: calc(100% - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #bfdffe;
+    background-image: linear-gradient(62deg, #b8dbff 0%, #f1e3ff 100%);
+}
+
+.container{
+    width: 400px;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;  
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+    box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    backdrop-filter: blur(10px);
+}
+
+.container h2{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 28px;
+}
+
+.key{
+    width: 90px;
+    height: 90px;
+    background-color: #A5B5D5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h6{
+    width: 80px;
+    height: 80px;
+    background-color: #8294B8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+i{
+    font-size: 55px;
+    color: #162A68
+}
+
+.inputBox{
+    position: relative;
+    width: 290px;
+    margin-bottom: 30px;
+}
+
+.inputBox input{
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.inputBox span{
+    position: absolute;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 15px;
+    pointer-events: none;
+    color: gray;
+    transition: all ease 0.2s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+    color: black;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 12px;
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+}
+
+.remember-forgot-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.remember{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.remember>span{
+    font-size: 14px;
+    color: rgb(48, 39, 39);
+}
+
+.forgot a{
+    font-size: 14px;
+    text-decoration: none;
+    color:blue
+}
+
+
+.email-div{
+    text-align: center;
+}
+
+.email-div>p{
+    font-size: 14px;
+}
+
+.msg{
+    text-align: center;
+    margin: 0 30px;
+}
+
+.msg h2{
+    font-size: 21px;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-bottom: 15px;
+}
+
+.msg p{
+    font-size: 13px;
+    color: rgb(97, 79, 79);
+}
+
+.email-div p a{
+    text-decoration: none;
+    color: blue;
+}
+
+button{
+    width: 100%;
+    padding: 15px 50px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all linear 0.2s;
+    z-index: 1111;
+}
+
+button::after{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all linear 0.2s;
+    z-index: -1;
+}
+
+
+button:hover::after{
+    transform: translate(-50%, -50%) scale(6.5);
+}
+
+button:hover{
+    color: black;
+}
+
+
+form>p{
+    font-size: 14px;
+}
+
+form>p>a{
+    text-decoration: none;
+    color: blue;
+}
+
+/* ///////////////////// Responsiveness //////////////////// */
+
+@media (max-width:600px) {
+
+    /* html, body{
+        width: 100%;
+        height: 100vh;
+        overflow-y: hidden;
+    } */
+
+    .body{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        background-color: #bfdffe;
+        background-image: linear-gradient(62deg, #b8dbff 0%, #f1e3ff 100%);
+    }
+
+    .container{
+        width: 350px;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 40px;  
+        background: rgba(255, 255, 255, 0.09);
+        border-radius: 16px;
+        box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3px);
+        backdrop-filter: blur(10px);
+        margin-top: 50px;
+    }
+    
+    .container h2{
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 23px;
+    }
+    
+    .inputBox{
+        position: relative;
+        width: 290px;
+        margin-bottom: 20px;
+    }
+    
+    .inputBox input{
+        width: 100%;
+        padding: 15px;
+        outline: none;
+        border: none;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+    
+    .inputBox span{
+        position: absolute;
+        left: 0;
+        text-transform: uppercase;
+        font-size: 14px;
+        padding: 15px;
+        pointer-events: none;
+        color: gray;
+        transition: all ease 0.2s;
+    }
+    
+    .inputBox input:valid ~ span,
+    .inputBox input:focus ~ span{
+        color: black;
+        transform: translateX(10px) translateY(-7px);
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 12px;
+        backdrop-filter: blur(8px);
+        border-radius: 10px;
+    }
+    
+    form{
+        text-align: center;
+    }
+    
+    button{
+        width: 100%;
+        padding: 15px 50px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 50px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        transition: all linear 0.2s;
+        z-index: 1111;
+    }
+    
+    button::after{
+        content: "";
+        position: absolute;
+        background-color: #fff;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 45px;
+        height: 45px;
+        background-color: white;
+        border-radius: 50%;
+        transition: all linear 0.2s;
+        z-index: -1;
+    }
+    
+    
+    button:hover::after{
+        transform: translate(-50%, -50%) scale(6.5);
+    }
+    
+    button:hover{
+        color: black;
+    }
+    
+    
+    form>p{
+        font-size: 14px;
+    }
+    
+    form>p>a{
+        text-decoration: none;
+    }
+}
+
+

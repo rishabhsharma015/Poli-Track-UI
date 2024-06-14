@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.main {
+    height: calc(100% - 60px);
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #DEE0FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 66px;
+    color: #28a745; /* Success icon color */
+}
+
+h3 {
+    margin: 20px 0;
+    color: #333;
+}
+
+.container {
+    margin: 20px 0;
+}
+
+.box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #f9f9f9;
+}
+
+#id-to-copy {
+    margin: 0;
+    padding: 10px;
+    background-color: #e9ecef;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: all; /* Make it easier to select and copy */
+}
+
+#copy-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#copy-button:hover {
+    background-color: #0056b3;
+}
+
+#copy-button.copied {
+    background-color: #28a745;
+}
+
+
+
+
+@media (max-width:600px) {
+    p{
+        font-size: 14px;
+    }
+}

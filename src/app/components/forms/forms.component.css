@@ -1,0 +1,782 @@
+/* Form CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #bfdffe;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: linear-gradient(62deg, #b8dbff 0%, #f1e3ff 100%);
+  }
+  
+  .main {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(62deg, #b8dbff 0%, #f1e3ff 100%);
+  }
+  
+  
+  .nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+  
+  .options{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  
+  .userIdDiv{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .userIdDiv p{
+    font-size: 17px;
+  }
+  
+  p i {
+    opacity: 1;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: 500;
+    margin-right: 4px;
+    transition: opacity ease 0.5s;
+    background-color: navy;
+    color: white;
+  }
+  
+  .options a {
+    width: fit-content;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+  }
+  
+  a:hover i {
+    opacity: 1;
+  }
+  
+  a i {
+    opacity: 0;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: 500;
+    margin-right: 4px;
+    transition: opacity ease 0.5s;
+    background-color: navy;
+    color: white;
+  }
+  
+  .headings {
+    width: 100%;
+    height: 130px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .headings h3 {
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+  }
+  
+  .headings h3:nth-child(1) {
+    font-size: 25px;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .details {
+    width: 1300px;
+    height: 300px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  select {
+    border: none;
+    outline: none;
+  }
+  
+  .inputBox {
+    position: relative;
+    width: 290px;
+  }
+  
+  .gender {
+    width: 290px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    justify-content: space-between;
+    padding: 14px;
+    border-radius: 10px;
+  }
+  
+  .gender label {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .inputBox input {
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .inputBox span {
+    position: absolute;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 15px;
+    pointer-events: none;
+    color: gray;
+    transition: all ease 0.2s;
+  }
+  
+  .inputBox input:valid ~ span,
+  .inputBox input:focus ~ span {
+    color: black;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 2px 12px;
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+  }
+  
+  .accordians {
+    width: 100%;
+    padding: 30px 0;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .accordian {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .heading-opener {
+    width: 1300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    border: 1px solid rgb(0, 0, 0);
+  }
+  
+  .heading-opener h3 {
+    font-weight: 500;
+  }
+  
+  .heading-opener i {
+    font-size: 22px;
+  }
+  
+  table {
+    width: 1300px;
+    border-collapse: collapse;
+    margin: auto;
+  }
+  th,
+  td {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 8px;
+    text-align: center;
+  }
+  
+  tr {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 15px;
+    text-align: center;
+  }
+  
+  td > input {
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    font-size: 17px;
+  }
+  
+  .head-i {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .head-i i {
+    cursor: pointer;
+  }
+  
+  .ri-eye-line {
+    display: none;
+  }
+  
+  .mini-form {
+    width: 100%;
+    max-height: fit-content;
+    display: none;
+    transition: opacity 0.5s ease;
+  }
+  
+  .mini-form.hidden {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .mini-form.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  button {
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all linear 0.2s;
+    z-index: 1111;
+  }
+  
+  button::after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all linear 0.2s;
+    z-index: -1;
+  }
+  
+  button:hover::after {
+    transform: translate(-50%, -50%) scale(6.5);
+  }
+  
+  button:hover {
+    border: none;
+    color: black;
+  }
+  
+  .user-menu {
+    width: 16%;
+    height: 35%;
+    padding: 25px;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    display: none;
+  }
+  
+  .img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  
+  .user-menu ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #username{
+    font-weight: 700;
+    color: navy;
+  }
+  
+  ul li a{
+    color: navy;
+    text-decoration: none;
+  }
+  
+  .blur {
+    filter: blur(10px); /* Adjust the blur strength as needed */
+  }
+  
+  /* ////////////////////////////////// Responsive //////////////////////////////////*/
+  
+  @media (max-width: 600px) {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    html,
+    body {
+      width: 100%;
+      height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #bfdffe;
+    }
+  
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-image: linear-gradient(62deg, #b8dbff 0%, #f1e3ff 100%);
+    }
+  
+    .main {
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(62deg, #b8dbff 0%, #f1e3ff 100%);
+    }
+  
+    .nav {
+      width: 100%;
+      height: 60px;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      gap: 17px;
+    }
+  
+    .options{
+      width: fit-content;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    
+    .userIdDiv{
+      width: fit-content;
+      height: 100%;
+      /* background-color: #fff; */
+      display: flex;
+      align-items: center;
+    }
+    
+    .userIdDiv p{
+      font-size: 13px;
+    }
+    
+    p i {
+      opacity: 1;
+      background-color: white;
+      padding: 8px;
+      border-radius: 50%;
+      font-weight: 500;
+      margin-right: 4px;
+      transition: opacity ease 0.5s;
+      background-color: navy;
+      color: white;
+    }
+  
+    .nav a {
+      width: fit-content;
+      text-decoration: none;
+      color: black;
+      font-size: 13px;
+    }
+  
+    a i {
+      opacity: 1;
+      background-color: white;
+      padding: 8px;
+      border-radius: 50%;
+      font-weight: 100;
+      margin-right: 4px;
+      background-color: navy;
+      color: white;
+    }
+  
+    .headings {
+      width: 100%;
+      height: 130px;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    .headings h3 {
+      font-weight: 600;
+      font-size: 16px;
+      color: black;
+    }
+  
+    .headings h3:nth-child(1) {
+      font-size: 21px;
+    }
+  
+    .container {
+      width: 100%;
+      height: 100%;
+    }
+  
+    .details {
+      width: 100%;
+      height: 300px;
+      margin: auto;
+      padding: 20px;
+    }
+  
+    form {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    select {
+      border: none;
+      outline: none;
+    }
+  
+    .inputBox {
+      position: relative;
+      width: 100%;
+    }
+  
+    .gender {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      justify-content: space-between;
+      padding: 14px;
+      border-radius: 10px;
+    }
+  
+    .gender label {
+      font-size: 14px;
+      color: gray;
+    }
+  
+    .inputBox input {
+      width: 100%;
+      padding: 15px;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+    }
+  
+    .inputBox span {
+      position: absolute;
+      left: 0;
+      text-transform: uppercase;
+      font-size: 14px;
+      padding: 15px;
+      pointer-events: none;
+      color: gray;
+      transition: all ease 0.2s;
+    }
+  
+    .inputBox input:valid ~ span,
+    .inputBox input:focus ~ span {
+      color: black;
+      transform: translateX(10px) translateY(-7px);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 2px 12px;
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+    }
+  
+    .accordians {
+      width: 100%;
+      padding: 30px 0;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+  
+    .accordian {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+    }
+  
+    .heading-opener {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      justify-content: space-between;
+      border: 1px solid rgb(0, 0, 0);
+      gap: 20px;
+    }
+  
+    .heading-opener h3 {
+      font-weight: 500;
+      font-size: 16px;
+    }
+  
+    .heading-opener i {
+      font-size: 17px;
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: auto;
+    }
+  
+    th,
+    td {
+      border: 1px solid rgb(255, 255, 255);
+      padding: 5px;
+      text-align: center;
+      font-size: 12px;
+    }
+  
+    tr {
+      border: 1px solid rgb(255, 255, 255);
+      padding: 15px;
+      text-align: center;
+    }
+  
+    td > input {
+      width: 100%;
+      padding: 2px;
+      outline: none;
+      font-size: 17px;
+    }
+  
+    .head-i {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  
+    .head-i i {
+      cursor: pointer;
+    }
+  
+    .ri-eye-line {
+      display: none;
+    }
+    .ri-eye-off-line {
+      display: initial;
+    }
+  
+    .mini-form {
+      width: 100%;
+      max-height: fit-content;
+      display: none;
+      transition: opacity 0.5s ease;
+    }
+  
+    .mini-form.hidden {
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+  
+    .mini-form.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+  
+    button {
+      width: 100%;
+      padding: 9px 10px;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      background-color: black;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      transition: all linear 0.2s;
+      z-index: 1111;
+    }
+  
+    button::after {
+      content: "";
+      position: absolute;
+      background-color: #fff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 45px;
+      height: 45px;
+      background-color: white;
+      border-radius: 50%;
+      transition: all linear 0.2s;
+      z-index: -1;
+    }
+  
+    button:hover::after {
+      transform: translate(-50%, -50%) scale(6.5);
+    }
+  
+    button:hover {
+      border: none;
+      color: black;
+    }
+  
+    @media only screen and (max-width: 600px) {
+      .details {
+        height: auto;
+      }
+  
+      .gender,
+      .inputBox {
+        width: 100%;
+      }
+  
+      .heading-opener,
+      table {
+        width: 100%;
+      }
+    }
+  
+    .user-menu {
+      width: 95%;
+      height: 40%;
+      padding: 25px;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      left: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      z-index: 1111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      display: none;
+    }
+    
+    .img{
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    
+    .img img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+    
+    .user-menu ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      padding: 0;
+      margin: 0;
+    }
+    
+    #username{
+      font-weight: 700;
+      color: navy;
+    }
+    
+    ul li a{
+      color: navy;
+      text-decoration: none;
+    }
+  }
+  

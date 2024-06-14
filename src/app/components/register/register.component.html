@@ -1,0 +1,147 @@
+
+<div class="body">
+    <div class="container">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <h2>Registration</h2>
+          <div class="details">
+            <!-- Details div -->
+            <div class="div1">
+              <div class="details1">
+                <!-- First Name -->
+                <div class="inputBox">
+                  <input type="text" name="fname" id="fname" required="required" formControlName="firstName" autocomplete="off" />
+                  <span>First Name</span>
+                </div>
+      
+                <!-- Last Name -->
+                <div class="inputBox">
+                  <input type="text" name="lname" id="lname" required="required" formControlName="lastName" autocomplete="off"/>
+                  <span>Last Name</span>
+                </div>
+      
+                <!-- Gender -->
+                <div class="gender">
+                  <span>Gender</span>
+                  <input type="radio" id="check" formControlName="gender" value="Male" />
+                  <label for="check">Male</label>
+                  <input type="radio" id="check2" formControlName="gender" value="Female" />
+                  <label for="check2">Female</label>
+                </div>
+      
+                <!-- Email -->
+                <div class="inputBox">
+                  <input type="email" name="mail" id="mail" required="required" formControlName="email" autocomplete="off"/>
+                  <span>Email</span>
+                </div>
+      
+                <!-- Contact -->
+                <div class="inputBox">
+                  <input
+                    type="text"
+                    name="num"
+                    id="num"
+                    required="required"
+                    formControlName="phone"
+                    autocomplete="off"
+                  />
+                  <span>Contact</span>
+                </div>
+      
+                <!-- Password -->
+                <div class="inputBox">
+                  <div class="inp-span">
+                      <input type="password" name="password" id="password" required="required" autocomplete="off" formControlName="password" autocomplete="off">
+                      <span>Password</span>
+                  </div>
+  
+                  <!-- open eye and close eye icons -->
+                  <div class="icon">
+                      <i class="ri-eye-fill" id="openEye"></i>
+                      <i class="ri-eye-off-fill" id="closeEye"></i>
+                  </div>
+                </div>
+  
+                <!-- Confirm Password -->
+                <div class="inputBox">
+                  <div class="inp-span">
+                    <input type="password" name="c_password" id="c_password" required="required" autocomplete="off" formControlName="confirmPassword">
+                    <span>Confirm Password</span>
+                  </div>
+  
+                  <div class="icon">
+                    <i class="ri-eye-fill" id="c_openEye"></i>
+                    <i class="ri-eye-off-fill" id="c_closeEye"></i>
+                  </div>
+                </div>
+            </div>
+      
+            <div class="details2">
+                <!-- Street address -->
+                <div class="inputBox">
+                  <input type="text" name="street" id="street" required="required" formControlName="streetAddress" autocomplete="off"/>
+                  <span>Street address</span>
+                </div>
+      
+                <!-- Street address 2 -->
+                <div class="inputBox">
+                  <input
+                    type="text"
+                    name="street2"
+                    id="street2"
+                    required="required"
+                    formControlName="streetAddress2"/>
+                  
+                  <span>Street address 2</span>
+                </div>
+      
+                <!-- City -->
+                <div class="inputBox">
+                  <input type="text" name="city" id="city" required="required" formControlName="city" autocomplete="off"/>
+                  <span>City</span>
+                </div>
+      
+                <!-- Region -->
+                <div class="inputBox">
+                  <input type="text" name="region" id="region" required="required" formControlName="region" autocomplete="off" />
+                  <span>Region</span>
+                </div>
+      
+                <!-- Postal Code -->
+                <div class="inputBox">
+                  <input type="text" name="pcode" id="pcode" required="required" formControlName="postalCode" autocomplete="off"/>
+                  <span>Postal Code</span>
+                </div>
+      
+                <!-- Parties dropdown -->
+                <div class="options">
+                  <label for="party">Political Party</label>
+                  <select id="party" name="party" formControlName="parties">
+                    <option value="BJP">BJP</option>
+                    <option value="Congress">Congress</option>
+                    <option value="AAP">AAP</option>
+                    <option value="ABC">ABC</option>
+                  </select>
+                </div>
+  
+                <!-- Positions dropdown -->
+                <div class="options">
+                  <label for="position">Positions</label>
+                  <select id="position" name="position" formControlName="position">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                  </select>
+                </div>
+            </div>
+            </div>
+              
+            <!-- Button group (submit + cancel) -->
+            <div class="btn-grp">
+                <button type="submit">submit</button>
+                <button (click)="onReset()">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+</div>

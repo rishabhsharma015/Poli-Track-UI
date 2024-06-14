@@ -1,0 +1,54 @@
+<!-- <div class="main">
+    
+</div> -->
+
+<div class="menu-icon" [ngClass]="{'expanded': !showMenu}">
+  <i class="ri-menu-2-fill" id="menu" *ngIf="showMenu" (click)="onClickOpen()"></i>
+  <i class="ri-close-fill" id="cross" *ngIf="!showMenu" (click)="onClickOpen()"></i>
+  <div class="nav-part">
+    @if(this.authservice.getLoginStatus() || this.adminauthservice.getLoginStatus()){
+      <h2 id="username">{{this.authservice.getLoggedInUserName() || this.adminauthservice.getLoggedInAdminName()}}</h2>
+    }
+    @else{
+      <h2 routerLink="/">PoliTrack</h2>
+    }
+
+    <div class="mobile_links">
+      @if(this.authservice.getLoginStatus() || this.adminauthservice.getLoginStatus()){
+        <a routerLink="/boothList" routerLinkActive="active"><i class="ri-home-4-line"></i> <span>Home</span></a>
+        <a routerLink="/" routerLinkActive="active" (click)="logout()"><i class="ri-logout-box-line"></i> <span>Logout</span></a>
+      }
+      @else{
+        <a routerLink="/login" routerLinkActive="active"><i class="ri-login-box-line"></i> <span>Login</span></a>
+        <a routerLink="/register" routerLinkActive="active"><i class="ri-booklet-line"></i> <span>Register</span></a>
+        <a routerLink="/contact" routerLinkActive="active"><i class="ri-contacts-line"></i> <span>Contact Us</span></a>
+        <a routerLink="/about" routerLinkActive="active"><i class="ri-team-line"></i> <span>About Us</span></a>
+      }
+    </div>
+  </div>
+  
+</div>
+
+<div class="nav">
+  <div class="links">
+    @if(this.authservice.getLoginStatus() || this.adminauthservice.getLoginStatus()){
+      <a routerLink="/boothList" routerLinkActive="active"><i class="ri-home-4-line"></i> <span>Home</span></a>
+        <a routerLink="/" routerLinkActive="active" (click)="logout()"><i class="ri-logout-box-line"></i> <span>Logout</span></a>
+    }
+    @else{
+      <a routerLink="/login" routerLinkActive="active"><i class="ri-login-box-line"></i> <span>Login</span></a>
+      <a routerLink="/register" routerLinkActive="active"><i class="ri-booklet-line"></i> <span>Register</span></a>
+      <a routerLink="/contact" routerLinkActive="active"><i class="ri-contacts-line"></i> <span>Contact Us</span></a>
+      <a routerLink="/about" routerLinkActive="active"><i class="ri-team-line"></i> <span>About Us</span></a>
+    }
+  </div>
+
+  <div class="nav-part" data-aos="zoom-in">
+    @if(this.authservice.getLoginStatus() || this.adminauthservice.getLoginStatus()){
+      <h4>{{this.authservice.getLoggedInUserName() || this.adminauthservice.getLoggedInAdminName()}}</h4>
+    }
+    @else{
+      <h2 routerLink="/">PoliTrack</h2>
+    }
+  </div>
+</div>

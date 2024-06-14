@@ -1,0 +1,75 @@
+<div class="body">
+    <div class="head-form">
+        <h2>Select State and Vidhan Sabha</h2>
+        <form action="#" [formGroup]="boothListForm" (ngSubmit)="onSubmit()">
+          <!-- State dropdown -->
+          <div class="dropdown">
+            <label for="state">State</label>
+            <select name="state" id="state" required="required" formControlName="state">
+              <option value="" disabled>--Select State--</option>
+              <option value="andhra-pradesh">Andhra Pradesh</option>
+              <option value="arunachal-pradesh">Arunachal Pradesh</option>
+              <option value="assam">Assam</option>
+              <option value="bihar">Bihar</option>
+              <option value="chhattisgarh">Chhattisgarh</option>
+              <option value="goa">Goa</option>
+              <option value="gujarat">Gujarat</option>
+              <option value="haryana">Haryana</option>
+              <option value="himachal-pradesh">Himachal Pradesh</option>
+              <option value="jharkhand">Jharkhand</option>
+              <option value="karnataka">Karnataka</option>
+              <option value="kerala">Kerala</option>
+              <option value="madhya-pradesh">Madhya Pradesh</option>
+              <option value="maharashtra">Maharashtra</option>
+              <option value="manipur">Manipur</option>
+              <option value="meghalaya">Meghalaya</option>
+              <option value="mizoram">Mizoram</option>
+              <option value="nagaland">Nagaland</option>
+              <option value="odisha">Odisha</option>
+              <option value="punjab">Punjab</option>
+              <option value="rajasthan">Rajasthan</option>
+              <option value="sikkim">Sikkim</option>
+              <option value="tamil-nadu">Tamil Nadu</option>
+              <option value="telangana">Telangana</option>
+              <option value="tripura">Tripura</option>
+              <option value="uttar-pradesh">Uttar Pradesh</option>
+              <option value="uttarakhand">Uttarakhand</option>
+              <option value="west-bengal">West Bengal</option>
+            </select>
+          </div>
+          
+          <!-- Vidhan Sabha dropdown -->
+          <div class="dropdown">
+            <label for="vsabha">Vidhan Sabha</label>
+            <select name="vsabha" id="vsabha" required="required" formControlName="vidhanSabha"> 
+              <option value="" disabled>--Select Vidhan Sabha--</option>
+              <option value="171">171</option>
+              <option value="172">172</option>
+              <option value="173">173</option>
+              <option value="174">174</option>
+              <option value="175">175</option>
+            </select>
+          </div>
+
+          <!-- button to search booth -->
+          <button id="searchButton" type="submit" [disabled]="boothListForm.invalid" >Search Booth</button>
+        </form>
+        <p id="errorMsg"></p>
+</div>
+
+    @defer (on timer(1s)){
+      <app-list></app-list>
+    }
+    @placeholder {
+      <div>Waiting ...</div>
+    }
+    @loading{
+      <div>Loading ...</div>
+    }
+    @error{
+      <div>Error ...</div>
+    }
+
+</div>
+
+
