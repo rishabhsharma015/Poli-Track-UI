@@ -3,24 +3,27 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { AdminauthService } from '../../services/adminauth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { CommonModule } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, ReactiveFormsModule],
+  imports: [RouterLink, RouterLinkActive, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
 
     loginForm!: FormGroup;
-    constructor(public fb: FormBuilder, private route: Router, private authservice: AuthService, private adminauthservice: AdminauthService){}
+    constructor(private snackBar: MatSnackBar, public fb: FormBuilder, private route: Router, private authservice: AuthService, private adminauthservice: AdminauthService){}
+
 
     ngOnInit(): void {
       this.loginForm = this.fb.group({
-        uid: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         rememberMe: [false, Validators.required]
       })
@@ -29,11 +32,11 @@ export class LoginComponent implements OnInit {
     }
 
     populateFormFromLocalStorage(): void {
-      const uid = localStorage.getItem('uid');
+      const email = localStorage.getItem('email');
       const password = localStorage.getItem('password');
   
-      if (uid && password) {
-        this.loginForm.controls['uid'].setValue(uid);
+      if (email && password) {
+        this.loginForm.controls['email'].setValue(email);
         this.loginForm.controls['password'].setValue(password);
         this.loginForm.controls['rememberMe'].setValue(true);
       }
@@ -41,7 +44,7 @@ export class LoginComponent implements OnInit {
 
     onLogin(){
       // If admin.
-      if(this.loginForm.value.uid === 'ADMIN' && this.loginForm.value.password === 'admin123'){
+      if(this.loginForm.value.email === 'ADMIN@gmail.com' && this.loginForm.value.password === 'admin123'){
         console.log('admin login');
         this.adminauthservice.login();
         return;
@@ -54,7 +57,7 @@ export class LoginComponent implements OnInit {
     
       // Saving credentials if true.
       if(this.loginForm.value.rememberMe){
-        localStorage.setItem('uid', this.loginForm.value.uid);
+        localStorage.setItem('email', this.loginForm.value.email);
         localStorage.setItem('password',  this.loginForm.value.password);
       }
 
@@ -64,8 +67,14 @@ export class LoginComponent implements OnInit {
         this.authservice.setLoggedInUserName(data.firstName + ' ' + data.lastName);
         this.route.navigate(['/boothList']);
         
-      }, (err)=> console.log("Invalid credentials",err))
-      this.route.navigate(['/boothList']);
+      }, (err)=> {
+        this.snackBar.open('Invalid email or password', 'Close', {
+          duration: 3000,
+          verticalPosition: 'top', 
+          horizontalPosition: 'center'
+        });
+      })
+
       this.loginForm.reset();
     }
 }

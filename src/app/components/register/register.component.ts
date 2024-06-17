@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -14,12 +15,12 @@ export class RegisterComponent implements OnInit {
 
   registerForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private authservice: AuthService, private route: Router) {}
+  constructor(private snackBar: MatSnackBar, private fb: FormBuilder, private authservice: AuthService, private route: Router) {}
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      firstName: ['', Validators.required],  // Change firstname to firstName
-      lastName: ['', Validators.required],    // Change lastname to lastName
+      firstName: ['', Validators.required],  
+      lastName: ['', Validators.required],   
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
@@ -42,25 +43,37 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.registerForm.valid) {
-      let user = {uid: "", ...this.registerForm.value}
+
+      // let user = {uid: "", ...this.registerForm.value}
+
+      if(this.registerForm.valid){
+        let user = {...this.registerForm.value}
       delete user['confirmPassword']
-      console.log(user)
       console.log('User payload:', user);
       this.authservice.register(user).subscribe(
         (data) => {
-          console.log(data.uid);
-          this.authservice.setRegisteredId(data.uid);
+          console.log(data.email);
+          this.authservice.setRegisteredEmail(data.email);
           this.route.navigate(['/success']);
         },
         (error) => {
-          console.error("Could not register user", error);
+          this.snackBar.open("Email is already in use", "Close", {
+            duration: 5000,
+            verticalPosition: 'top',
+            horizontalPosition: 'center',
+          });
         }
       );
-    } else {
-      console.log('Form is not valid');
-      this.findInvalidControls();
-    }
+      }
+
+      else{
+        this.snackBar.open("Form is invalid", "Close", {
+          duration:3000,
+          verticalPosition: 'top',
+          horizontalPosition: 'center',
+        });
+      }
+    
     this.onReset()
   }
 

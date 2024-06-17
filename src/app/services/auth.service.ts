@@ -12,8 +12,8 @@ export class AuthService implements OnInit{
 
   private apiUrl = 'http://localhost:8080/api/users';
   private loggedInUserName:string = ''
-  private loggedInId: string = '';
-  private registeredId: string = '';
+  // private loggedInId: string = '';
+  private registeredEmail: string = '';
   private loggedIn: boolean = false;
 
 
@@ -57,13 +57,13 @@ export class AuthService implements OnInit{
   }
 
   // get registered id
-  getRegisteredId(){
-    return this.registeredId;
+  getRegisteredEmail(){
+    return this.registeredEmail;
   }
 
   // set Registered Id
-  setRegisteredId(id: string){
-    this.registeredId = id;
+  setRegisteredEmail(id: string){
+    this.registeredEmail = id;
   }
 
 }

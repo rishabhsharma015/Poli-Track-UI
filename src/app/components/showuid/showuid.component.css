@@ -75,10 +75,72 @@ h3 {
 }
 
 
+button{
+    width: 20%;
+    padding: 15px 50px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all linear 0.2s;
+    z-index: 1111;
+    margin-top: 40px;
+}
+
+button::after{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all linear 0.2s;
+    z-index: -1;
+}
+
+button:hover::after{
+    transform: translate(-50%, -50%) scale(6.5);
+}
+
+button:hover{
+    color: black;
+}
+
+
+
 
 
 @media (max-width:600px) {
     p{
         font-size: 14px;
+    }
+
+    button {
+        width: 35%;
+        padding: 15px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        transition: all linear 0.2s;
+        z-index: 1111;
+        margin-top: 0;
+        /* margin-bottom: 20px; */
     }
 }

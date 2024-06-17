@@ -23,7 +23,7 @@ export const routes: Routes = [
     {path: "forgot", component: ForgotComponent},
     {path: "boothList", component: BoothListComponent, canActivate: [authboothListGuard]},
     {path: "forms", component: FormsComponent},
-    {path: "success", component: ShowuidComponent},
+    {path: "success", component: ShowuidComponent, canActivate: [authboothListGuard]},
     {path: "dashboard", component: DashboardComponent, canActivate: [authdashboardGuard]},
     {path: "**", component: NotFoundComponent},
 ];

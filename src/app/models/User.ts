@@ -16,7 +16,7 @@ export type User = {
 
 
 export type UserLogin = {
-    uid: string,
+    email: string,
     password: string
 }
 
