@@ -11,13 +11,12 @@
             <!-- Password -->
             <div class="inputBox">
                 <div class="inp-span">
-                    <input type="password" name="password" id="password" required="required" autocomplete="off" formControlName="password">
+                    <input [type]="passwordFieldType"  name="password" id="password" required="required" autocomplete="off" formControlName="password">
                     <span>Password</span>
                 </div>
     
-                <div class="icon">
-                    <i class="ri-eye-fill" id="openEye"></i>
-                    <i class="ri-eye-off-fill" id="closeEye"></i>
+                <div class="icon" (click)="togglePasswordVisibility()">
+                    <i [ngClass]="passwordFieldType === 'password' ? 'ri-eye-fill' : 'ri-eye-off-fill'"></i>
                 </div>
             </div>
     

@@ -50,27 +50,25 @@
                 <!-- Password -->
                 <div class="inputBox">
                   <div class="inp-span">
-                      <input type="password" name="password" id="password" required="required" autocomplete="off" formControlName="password" autocomplete="off">
+                      <input [type]=passwordFieldType name="password" id="password" required="required" autocomplete="off" formControlName="password" autocomplete="off">
                       <span>Password</span>
                   </div>
   
                   <!-- open eye and close eye icons -->
-                  <div class="icon">
-                      <i class="ri-eye-fill" id="openEye"></i>
-                      <i class="ri-eye-off-fill" id="closeEye"></i>
+                  <div class="icon" (click)="togglePasswordFieldType()">
+                    <i [ngClass]="passwordFieldType === 'password' ? 'ri-eye-fill' : 'ri-eye-off-fill'"></i>
                   </div>
                 </div>
   
                 <!-- Confirm Password -->
                 <div class="inputBox">
                   <div class="inp-span">
-                    <input type="password" name="c_password" id="c_password" required="required" autocomplete="off" formControlName="confirmPassword">
+                    <input [type]=c_passwordFieldType name="c_password" id="c_password" required="required" autocomplete="off" formControlName="confirmPassword">
                     <span>Confirm Password</span>
                   </div>
   
-                  <div class="icon">
-                    <i class="ri-eye-fill" id="c_openEye"></i>
-                    <i class="ri-eye-off-fill" id="c_closeEye"></i>
+                  <div class="icon" (click)="c_togglePasswordFieldType()">
+                    <i [ngClass]="c_passwordFieldType === 'password' ? 'ri-eye-fill' : 'ri-eye-off-fill'"></i>
                   </div>
                 </div>
             </div>

@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 export class LoginComponent implements OnInit {
 
     loginForm!: FormGroup;
+    passwordFieldType: string = 'password';
     constructor(private snackBar: MatSnackBar, public fb: FormBuilder, private route: Router, private authservice: AuthService, private adminauthservice: AdminauthService){}
 
 
@@ -40,6 +41,10 @@ export class LoginComponent implements OnInit {
         this.loginForm.controls['password'].setValue(password);
         this.loginForm.controls['rememberMe'].setValue(true);
       }
+    }
+
+    togglePasswordVisibility(): void {
+      this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
     }
 
     onLogin(){

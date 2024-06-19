@@ -3,18 +3,20 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit {
 
   registerForm!: FormGroup;
-
+  passwordFieldType:string = 'password'
+  c_passwordFieldType:string = 'password'
   constructor(private snackBar: MatSnackBar, private fb: FormBuilder, private authservice: AuthService, private route: Router) {}
 
   ngOnInit(): void {
@@ -36,6 +38,16 @@ export class RegisterComponent implements OnInit {
     }, { validator: this.passwordMatchValidator });
     
   }
+
+
+  togglePasswordFieldType(){
+    this.passwordFieldType = (this.passwordFieldType === 'password') ? 'text' : 'password'
+  }
+
+  c_togglePasswordFieldType(){
+    this.c_passwordFieldType = (this.c_passwordFieldType === 'password') ? 'text' : 'password'
+  }
+
 
   passwordMatchValidator(form: FormGroup) {
     return form.controls['password'].value === form.controls['confirmPassword'].value
