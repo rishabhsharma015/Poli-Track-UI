@@ -73,6 +73,14 @@ a i {
   color: white;
 }
 
+.user-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   html,
   body {
@@ -269,4 +277,6 @@ a i {
     background-color: navy;
     color: white;
   }
+
+
 }

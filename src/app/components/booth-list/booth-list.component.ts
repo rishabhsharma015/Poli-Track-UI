@@ -15,6 +15,8 @@ export class BoothListComponent implements OnInit {
 
   boothListForm!: FormGroup;
 
+  boothlist!: [];
+  showErrors: boolean = false;
   constructor(private fb: FormBuilder, private boothservice: BoothserviceService) {}
 
   ngOnInit(): void {
@@ -27,19 +29,12 @@ export class BoothListComponent implements OnInit {
   onSubmit() {
     if (this.boothListForm.valid) {
       console.log(this.boothListForm.value);
-      // this.boothListForm.reset()
-
-      this.boothservice.getBoothListByStateAndVidhanSabha(this.boothListForm.value).subscribe(
-        (data:any) => {
-          console.log(data);
-        },
-        (err:any) => {
-          console.log(err);
-        }
-      );
-      
     } else {
       console.error('Form is invalid');
+      const errorMsgElement = document.getElementById('errorMsg');
+      if (errorMsgElement) {
+        errorMsgElement.textContent = 'Please fill out all required fields.';
+      }
     }
   }
 

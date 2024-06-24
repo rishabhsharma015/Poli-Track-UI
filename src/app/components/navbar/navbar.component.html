@@ -7,7 +7,7 @@
   <i class="ri-close-fill" id="cross" *ngIf="!showMenu" (click)="onClickOpen()"></i>
   <div class="nav-part">
     @if(this.authservice.getLoginStatus() || this.adminauthservice.getLoginStatus()){
-      <h2 id="username">{{this.authservice.getLoggedInUserName() || this.adminauthservice.getLoggedInAdminName()}}</h2>
+      <h2 id="username"><i class="ri-user-line"></i> {{this.authservice.getLoggedInUserName() || this.adminauthservice.getLoggedInAdminName()}}</h2>
     }
     @else{
       <h2 routerLink="/">PoliTrack</h2>
@@ -45,7 +45,10 @@
 
   <div class="nav-part" data-aos="zoom-in">
     @if(this.authservice.getLoginStatus() || this.adminauthservice.getLoginStatus()){
-      <h4>{{this.authservice.getLoggedInUserName() || this.adminauthservice.getLoggedInAdminName()}}</h4>
+      <div class="user-icon">
+        <i class="ri-user-line"></i>
+        <h4>{{this.authservice.getLoggedInUserName() || this.adminauthservice.getLoggedInAdminName()}}</h4>
+      </div>
     }
     @else{
       <h2 routerLink="/">PoliTrack</h2>

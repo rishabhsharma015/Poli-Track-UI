@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+
 
 @Component({
   selector: 'app-showuid',
@@ -14,11 +15,17 @@ export class ShowuidComponent {
   emailToCopy: string = '';
   copyButtonText: string = 'Copy';
 
-  constructor(private authservice: AuthService) { 
+  constructor(private authservice: AuthService, private route: Router) { 
   }
   
   ngOnInit(): void {
     this.emailToCopy = this.authservice.getRegisteredEmail()
+  }
+
+
+  onRedirect(){
+    this.authservice.setRegisteredEmail("");
+    this.route.navigate(['/login']);
   }
 
   copyToClipboard() {

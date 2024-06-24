@@ -12,6 +12,7 @@ import { authboothListGuard } from './guards/authbooth-list.guard';
 import { ShowuidComponent } from './components/showuid/showuid.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { authdashboardGuard } from './guards/authdashboard.guard';
+import { registerGuardGuard } from './guards/register-guard.guard';
 
 
 export const routes: Routes = [
@@ -23,7 +24,7 @@ export const routes: Routes = [
     {path: "forgot", component: ForgotComponent},
     {path: "boothList", component: BoothListComponent, canActivate: [authboothListGuard]},
     {path: "forms", component: FormsComponent},
-    {path: "success", component: ShowuidComponent, canActivate: [authboothListGuard]},
+    {path: "success", component: ShowuidComponent, canActivate: [registerGuardGuard]},
     {path: "dashboard", component: DashboardComponent, canActivate: [authdashboardGuard]},
     {path: "**", component: NotFoundComponent},
 ];

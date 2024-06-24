@@ -5,13 +5,14 @@ import { AuthService } from '../../services/auth.service';
 import { AdminauthService } from '../../services/adminauth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, ReactiveFormsModule, CommonModule],
+  imports: [RouterLink, RouterLinkActive, ReactiveFormsModule, CommonModule, NgxSpinnerModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
 
     loginForm!: FormGroup;
     passwordFieldType: string = 'password';
-    constructor(private snackBar: MatSnackBar, public fb: FormBuilder, private route: Router, private authservice: AuthService, private adminauthservice: AdminauthService){}
+    constructor(private spinner: NgxSpinnerService, private snackBar: MatSnackBar, public fb: FormBuilder, private route: Router, private authservice: AuthService, private adminauthservice: AdminauthService){}
 
 
     ngOnInit(): void {
@@ -49,8 +50,12 @@ export class LoginComponent implements OnInit {
 
     onLogin(){
       // If admin.
+      this.spinner.show();
+    setTimeout(() => {
+
       if(this.loginForm.value.email === 'ADMIN@gmail.com' && this.loginForm.value.password === 'admin123'){
-        console.log('admin login');
+        // console.log('admin login');
+        this.spinner.hide();
         this.adminauthservice.login();
         return;
       }
@@ -67,12 +72,14 @@ export class LoginComponent implements OnInit {
       }
 
       this.authservice.login(userlogin).subscribe((data)=>{
+        this.spinner.hide();
         console.log(data);
         this.authservice.setLoginStatus(true);
         this.authservice.setLoggedInUserName(data.firstName + ' ' + data.lastName);
         this.route.navigate(['/boothList']);
         
       }, (err)=> {
+        this.spinner.hide();
         this.snackBar.open('Invalid email or password', 'Close', {
           duration: 3000,
           verticalPosition: 'top', 
@@ -81,5 +88,9 @@ export class LoginComponent implements OnInit {
       })
 
       this.loginForm.reset();
+
+
+    }, 2000);
+      
     }
 }
