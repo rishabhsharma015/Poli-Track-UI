@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { UserDropdownComponent } from '../user-dropdown/user-dropdown.component';
 
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, UserDropdownComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })

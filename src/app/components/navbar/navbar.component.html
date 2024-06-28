@@ -7,7 +7,7 @@
   <i class="ri-close-fill" id="cross" *ngIf="!showMenu" (click)="onClickOpen()"></i>
   <div class="nav-part">
     @if(this.authservice.getLoginStatus() || this.adminauthservice.getLoginStatus()){
-      <h2 id="username"><i class="ri-user-line"></i> {{this.authservice.getLoggedInUserName() || this.adminauthservice.getLoggedInAdminName()}}</h2>
+      <h2  (click)="toggleDropdown($event)" id="username"><i class="ri-user-line"></i> {{this.authservice.getLoggedInUserName() || this.adminauthservice.getLoggedInAdminName()}}</h2>
     }
     @else{
       <h2 routerLink="/">PoliTrack</h2>
@@ -45,7 +45,7 @@
 
   <div class="nav-part" data-aos="zoom-in">
     @if(this.authservice.getLoginStatus() || this.adminauthservice.getLoginStatus()){
-      <div class="user-icon">
+      <div class="user-icon dropdown-wrapper" (click)="toggleDropdown($event)">
         <i class="ri-user-line"></i>
         <h4>{{this.authservice.getLoggedInUserName() || this.adminauthservice.getLoggedInAdminName()}}</h4>
       </div>
@@ -54,4 +54,8 @@
       <h2 routerLink="/">PoliTrack</h2>
     }
   </div>
+</div>
+
+<div class="dropdown-wrapper" *ngIf="isDropdownVisible" #dropdown>
+  <app-user-dropdown></app-user-dropdown>
 </div>
